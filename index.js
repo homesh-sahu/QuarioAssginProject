@@ -169,16 +169,6 @@ app.get("/delete/:id", restrictToLoggedinUserOnly, async (req,res)=>{
   }
 });
 
-////////////////////////////////////////////////
-app.post("/addu", async (req, res) => {
-  try {
-    const { name, pass } = req.body;
-
-    const newPost = await Users.create({
-        name,
-        pass,
-    });
-
     res.status(201).json({ success: true, data: newPost });
 } catch (error) {
     res.status(500);
