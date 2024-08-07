@@ -169,12 +169,6 @@ app.get("/delete/:id", restrictToLoggedinUserOnly, async (req,res)=>{
   }
 });
 
-    res.status(201).json({ success: true, data: newPost });
-} catch (error) {
-    res.status(500);
-}
-
-});
 
 //Server Initialisation
 const startServer = async () => {
