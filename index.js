@@ -169,11 +169,27 @@ app.get("/delete/:id", restrictToLoggedinUserOnly, async (req,res)=>{
   }
 });
 
+////////////////////////////////////////////////
+app.post("/addu", async (req, res) => {
+  try {
+    const { name, pass } = req.body;
+
+    const newPost = await Users.create({
+        name,
+        pass,
+    });
+
+    res.status(201).json({ success: true, data: newPost });
+} catch (error) {
+    res.status(500);
+}
+
+});
 
 //Server Initialisation
 const startServer = async () => {
     try {
-      connectDB("mongodb://127.0.0.1:27017"); //MongoDB url is stored for deployment in process.env.MONGODB_URL
+      connectDB("mongodb+srv://harshsahu9926:rAqrCu9HIjsfks1j@cluster0.njhqnml.mongodb.net/?retryWrites=true&w=majority"); //MongoDB url is stored for deployment in process.env.MONGODB_URL
       app.listen(8000, () =>
         console.log("Server has started on port http://localhost:8000")
       );
