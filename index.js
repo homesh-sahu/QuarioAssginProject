@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 import { v4 as uuidv4 } from "uuid";
 import { setUser, getUser } from "./services/auth.js"
 import { restrictToLoggedinUserOnly, checkAuth } from "./middleware/auth.js";
+import * as dotenv from "dotenv";
 import { error } from "console";
 
 const app = express();
