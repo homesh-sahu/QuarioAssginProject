@@ -104,7 +104,7 @@ app.post("/ulogin", async (req, res) => {
             price
         });
 
-        res.status(201).json({ success: true, data: newPost });
+        res.status(201).redirect("/dashboard");
     } catch (error) {
         res.status(500);
     }
@@ -146,9 +146,9 @@ app.post("/update/:id", restrictToLoggedinUserOnly, async (req,res)=>{
   try {
    const updatedRecord =   await Post.findByIdAndUpdate(req.params.id, req.body)
    if(updatedRecord){
-      res.redirect('/')
+      res.redirect('/dashboard')
    }else{
-      res.redirect('read')
+      res.render('edit')
    }
   } catch (error) {
       console.log(error.message)
@@ -160,9 +160,9 @@ app.get("/delete/:id", restrictToLoggedinUserOnly, async (req,res)=>{
   try {
     const deleterecord =   await Post.findByIdAndDelete(req.params.id)
       if(deleterecord){
-          res.redirect('read')
-      }else{
           res.redirect('/dashboard')
+      }else{
+          res.render('edit')
       }
     
   } catch (error) {
