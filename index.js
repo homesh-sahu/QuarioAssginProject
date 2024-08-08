@@ -174,7 +174,7 @@ app.get("/delete/:id", restrictToLoggedinUserOnly, async (req,res)=>{
 //Server Initialisation
 const startServer = async () => {
     try {
-      connectDB("mongodb+srv://harshsahu9926:rAqrCu9HIjsfks1j@cluster0.njhqnml.mongodb.net/?retryWrites=true&w=majority"); //MongoDB url is stored for deployment in process.env.MONGODB_URL
+      connectDB(process.env.MONGODB_URL); //MongoDB url is stored for deployment in process.env.MONGODB_URL
       app.listen(8000, () =>
         console.log("Server has started on port http://localhost:8000")
       );
