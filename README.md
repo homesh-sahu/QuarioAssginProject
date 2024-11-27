@@ -2,7 +2,7 @@ Project Overview
 
 Title: AutoAdmin
 
-Overview: I developed a comprehensive web application for a tech company Quadiro Technologies LLP as part of an internship project, which successfully got me shortlisted for the interview round. This web application features both user and admin logins, with the following functionalities:
+Overview: I developed a comprehensive web application for a tech company Quadiro Technologies LLP as part of an internship project within the given time span of two days, which successfully got me shortlisted for the interview round. This web application features both user and admin logins, with the following functionalities:
 
 Admin Functionality: Admins have the ability to add, remove, and edit car details, including model, year, and other pertinent information.
 
